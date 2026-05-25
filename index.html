@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Welcome Aboard</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Font Example -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background-image:url("ADD AN IMAGE");
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            height:100vh;
+            font-family:Arial, sans-serif;
+
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            width:100%;
+            padding:25px;
+
+            display:flex;
+            justify-content:center;
+            gap:50px;
+
+            background:rgba(0,0,0,0.4);
+            backdrop-filter:blur(5px);
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-size:20px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:gold;
+            transform:scale(1.1);
+        }
+
+        /* MAIN CONTENT */
+
+        .hero{
+            flex:1;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:90px;
+            font-family:'Pirata One', cursive;
+            letter-spacing:4px;
+
+            margin-bottom:40px;
+
+            text-shadow:4px 4px 10px black;
+        }
+
+        /* CIRCLE IMAGES */
+
+        .circle-container{
+            display:flex;
+            gap:40px;
+
+            margin-bottom:50px;
+        }
+
+        .circle-container img{
+            width:180px;
+            height:180px;
+
+            border-radius:50%;
+            object-fit:cover;
+
+            border:5px solid white;
+
+            box-shadow:0px 0px 20px black;
+        }
+
+        /* SET SAIL BUTTON */
+
+        .set-sail-btn{
+            padding:18px 45px;
+
+            font-size:28px;
+            font-weight:bold;
+
+            color:white;
+            text-decoration:none;
+
+            background:#c0392b;
+
+            border-radius:50px;
+
+            transition:0.3s;
+
+            box-shadow:0px 0px 15px black;
+        }
+
+        .set-sail-btn:hover{
+            transform:scale(1.08);
+            background:#e74c3c;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="index.html">Home</a>
+      
+        <a href="aboutme.html">About Me</a>
+      
+       <a href="myfuture.html">Journey</a>
+      
+        <a href="projects.html">Projects</a>
+
+        <a href="favorites.html">Favorites</a>
+
+        <a href="food.html">Food</a>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <h1>WELCOME ABOARD</h1>
+
+        <!-- 3 CIRCLE IMAGES -->
+
+        <div class="circle-container">
+
+            <img src="ADD ONE PIC HERE" alt="Picture 1">
+
+            <img src="ADD ONE PIC HERE" alt="Picture 2">
+
+            <img src="ADD ONE PIC HERE" alt="Picture 3">
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <a href="about.html" class="set-sail-btn">
+
+            ⚓ Set Sail
+
+        </a>
+
+    </section>
+
+</body>
+</html>
