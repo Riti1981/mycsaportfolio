@@ -14,7 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    
+@font-face{
+    font-family:'Milkyway';
 
+    src:url('assets/fonts/MilkywayDEMO.ttf');
+}
     <style>
 
         *{
@@ -142,56 +147,80 @@
             justify-content:center;
         }
 
-        .circle-container img{
-            width:400px;
+     .circle-container img{
+    width:240px;
 
-            height:400px;
+    height:240px;
 
-            border-radius:50%;
+    border-radius:50%;
 
-            object-fit:cover;
+    object-fit:cover;
 
-            border:6px solid gold;
+    border:7px solid #FFD700;
 
-            box-shadow:0px 0px 20px rgba(0,0,0,0.4);
+    box-shadow:
+    0px 0px 25px rgba(0,0,0,0.45),
+    0px 0px 15px rgba(255,215,0,0.5);
 
-            transition:0.3s;
-        }
+    transition:0.35s;
+}
 
-        .circle-container img:hover{
-            transform:scale(1.08);
-        }
+      .circle-container img:hover{
+    transform:scale(1.12) rotate(2deg);
+
+    box-shadow:
+    0px 0px 35px rgba(255,215,0,0.8);
+}
 
         /* SET SAIL BUTTON */
 
-        .set-sail-btn{
-            padding:20px 50px;
+       .set-sail-btn{
+    padding:24px 70px;
 
-            font-size:30px;
+    font-size:42px;
 
-            font-weight:bold;
+    font-family:'Milkyway', cursive;
 
-            color:white;
+    letter-spacing:2px;
 
-            text-decoration:none;
+    color:white;
 
-            background:#1E3A5F;
+    text-decoration:none;
 
-            border:4px solid gold;
+    background:linear-gradient(
+    135deg,
+    #163B72,
+    #295FA8
+    );
 
-            border-radius:50px;
+    border:5px solid #FFD700;
 
-            transition:0.3s;
+    border-radius:70px;
 
-            box-shadow:0px 0px 15px rgba(0,0,0,0.4);
-        }
+    transition:0.35s;
 
-        .set-sail-btn:hover{
-            background:#29527A;
+    box-shadow:
+    0px 0px 20px rgba(0,0,0,0.4),
+    0px 0px 15px rgba(255,215,0,0.5);
 
-            transform:scale(1.08);
-        }
+    display:inline-flex;
 
+    align-items:center;
+
+    gap:15px;
+}
+      .set-sail-btn:hover{
+    transform:scale(1.1) translateY(-4px);
+
+    background:linear-gradient(
+    135deg,
+    #204C91,
+    #3A74C4
+    );
+
+    box-shadow:
+    0px 0px 35px rgba(255,215,0,0.8);
+}
     </style>
 
 </head>
