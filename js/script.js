@@ -4,20 +4,19 @@ function chooseShip(shipImage){
 
     ship.src = shipImage;
 
-    document.getElementById("ship-screen").style.display = "none";
+    const shipScreen = document.getElementById("ship-screen");
 
-    document.getElementById("map-screen").style.display = "block";
-}
-
-function travelTo(page, x, y){
-
-    const ship = document.getElementById("chosen-ship");
-
-    ship.style.left = x;
-
-    ship.style.top = y;
+    shipScreen.classList.add("fade-out");
 
     setTimeout(function(){
-        window.location.href = page;
-    }, 2000);
+
+        shipScreen.style.display = "none";
+
+        const mapScreen = document.getElementById("map-screen");
+
+        mapScreen.style.display = "block";
+
+        mapScreen.classList.add("fade-in");
+
+    }, 1200);
 }
