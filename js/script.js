@@ -1,7 +1,7 @@
 const islands = {
     about: {
         page: "aboutme.html",
-        x: "75%",
+        x: "80%",
         y: "70%"
     },
 
