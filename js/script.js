@@ -30,7 +30,8 @@ const islands = {
     }
 };
 
-function chooseShip(shipImage){
+function chooseShip(shipImage, event){
+
     localStorage.setItem("chosenShip", shipImage);
 
     const ship = document.getElementById("chosen-ship");
@@ -44,45 +45,59 @@ function chooseShip(shipImage){
     shipScreen.classList.add("fade-out");
 
     setTimeout(function(){
+
         shipScreen.style.display = "none";
 
         const mapScreen = document.getElementById("map-screen");
 
         mapScreen.style.display = "block";
+
         mapScreen.classList.add("fade-in");
+
     }, 1200);
 }
 
 function travelTo(islandName){
+
     const island = islands[islandName];
 
     const ship = document.getElementById("chosen-ship");
 
     ship.style.left = island.x;
+
     ship.style.top = island.y;
 
     setTimeout(function(){
+
         window.location.href = island.page;
+
     }, 2200);
 }
 
 window.onload = function(){
+
     const params = new URLSearchParams(window.location.search);
 
     const travelIsland = params.get("travel");
 
     if(travelIsland){
+
         const shipScreen = document.getElementById("ship-screen");
+
         const mapScreen = document.getElementById("map-screen");
+
         const ship = document.getElementById("chosen-ship");
 
         shipScreen.style.display = "none";
+
         mapScreen.style.display = "block";
 
         ship.src = localStorage.getItem("chosenShip") || "images/ship1.png";
 
         setTimeout(function(){
+
             travelTo(travelIsland);
+
         }, 700);
     }
 };
