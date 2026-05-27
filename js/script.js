@@ -1,103 +1,107 @@
 const islands = {
     about: {
         page: "aboutme.html",
-        x: "80%",
-        y: "70%"
+        path: [
+            ["80%", "70%"]
+        ]
     },
 
     hobbies: {
         page: "favorites.html",
-        x: "72%",
-        y: "20%"
+        path: [
+            ["87%", "65%"],
+            ["88%", "45%"],
+            ["86%", "28%"],
+            ["72%", "20%"]
+        ]
     },
 
     projects: {
         page: "projects.html",
-        x: "18%",
-        y: "20%"
+        path: [
+            ["65%", "15%"],
+            ["45%", "8%"],
+            ["25%", "15%"],
+            ["18%", "20%"]
+        ]
     },
 
     food: {
         page: "food.html",
-        x: "53%",
-        y: "45%"
+        path: [
+            ["28%", "35%"],
+            ["42%", "40%"],
+            ["53%", "45%"]
+        ]
     },
 
     future: {
         page: "myfuture.html",
-        x: "23%",
-        y: "72%"
+        path: [
+            ["47%", "55%"],
+            ["43%", "75%"],
+            ["23%", "72%"]
+        ]
     }
 };
 
 function chooseShip(shipImage, event){
-
     localStorage.setItem("chosenShip", shipImage);
 
     const ship = document.getElementById("chosen-ship");
-
     ship.src = shipImage;
 
     event.target.classList.add("selected-ship");
 
     const shipScreen = document.getElementById("ship-screen");
-
     shipScreen.classList.add("fade-out");
 
     setTimeout(function(){
-
         shipScreen.style.display = "none";
 
         const mapScreen = document.getElementById("map-screen");
-
         mapScreen.style.display = "block";
-
         mapScreen.classList.add("fade-in");
-
     }, 1200);
 }
 
 function travelTo(islandName){
-
     const island = islands[islandName];
-
     const ship = document.getElementById("chosen-ship");
 
-    ship.style.left = island.x;
+    let step = 0;
 
-    ship.style.top = island.y;
+    function moveNext(){
+        if(step < island.path.length){
+            ship.style.left = island.path[step][0];
+            ship.style.top = island.path[step][1];
+            step++;
 
-    setTimeout(function(){
+            setTimeout(moveNext, 900);
+        } else {
+            window.location.href = island.page;
+        }
+    }
 
-        window.location.href = island.page;
-
-    }, 2200);
+    moveNext();
 }
 
 window.onload = function(){
-
     const params = new URLSearchParams(window.location.search);
-
     const travelIsland = params.get("travel");
 
     if(travelIsland){
-
         const shipScreen = document.getElementById("ship-screen");
-
         const mapScreen = document.getElementById("map-screen");
-
         const ship = document.getElementById("chosen-ship");
 
         shipScreen.style.display = "none";
-
         mapScreen.style.display = "block";
 
         ship.src = localStorage.getItem("chosenShip") || "images/ship1.png";
 
         setTimeout(function(){
-
             travelTo(travelIsland);
-
         }, 700);
     }
 };
