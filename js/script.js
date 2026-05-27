@@ -2,45 +2,49 @@ const islands = {
     about: {
         page: "aboutme.html",
         path: [
-            ["80%", "70%"]
+            ["82%", "72%"]
         ]
     },
 
     hobbies: {
         page: "favorites.html",
         path: [
-            ["87%", "65%"],
-            ["88%", "45%"],
-            ["86%", "28%"],
-            ["72%", "20%"]
+            ["88%", "68%"],
+            ["89%", "53%"],
+            ["88%", "38%"],
+            ["82%", "26%"],
+            ["78%", "23%"]
         ]
     },
 
     projects: {
         page: "projects.html",
         path: [
-            ["65%", "15%"],
-            ["45%", "8%"],
-            ["25%", "15%"],
-            ["18%", "20%"]
+            ["72%", "16%"],
+            ["58%", "10%"],
+            ["42%", "8%"],
+            ["28%", "13%"],
+            ["20%", "22%"]
         ]
     },
 
     food: {
         page: "food.html",
         path: [
-            ["28%", "35%"],
-            ["42%", "40%"],
-            ["53%", "45%"]
+            ["26%", "32%"],
+            ["38%", "38%"],
+            ["50%", "45%"],
+            ["58%", "48%"]
         ]
     },
 
     future: {
         page: "myfuture.html",
         path: [
-            ["47%", "55%"],
-            ["43%", "75%"],
-            ["23%", "72%"]
+            ["52%", "58%"],
+            ["45%", "75%"],
+            ["34%", "82%"],
+            ["26%", "78%"]
         ]
     }
 };
@@ -75,9 +79,10 @@ function travelTo(islandName){
         if(step < island.path.length){
             ship.style.left = island.path[step][0];
             ship.style.top = island.path[step][1];
+
             step++;
 
-            setTimeout(moveNext, 900);
+            setTimeout(moveNext, 950);
         } else {
             window.location.href = island.page;
         }
@@ -99,6 +104,9 @@ window.onload = function(){
         mapScreen.style.display = "block";
 
         ship.src = localStorage.getItem("chosenShip") || "images/ship1.png";
+
+        ship.style.left = "82%";
+        ship.style.top = "72%";
 
         setTimeout(function(){
             travelTo(travelIsland);
