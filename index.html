@@ -1,275 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Welcome Aboard</title>
-
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
-    
-
-    <style>
-
-        @font-face{
-    font-family:'Milkyway';
-
-    src:url('assets/fonts/MilkywayDEMO.ttf');
-}
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-      body{
-    background-image:url("images/background.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    min-height:100vh;
-
-    font-family:Arial, sans-serif;
-
-    display:flex;
-
-    flex-direction:column;
-}
-
-        /* NAVBAR */
-
-       nav{
-    width:100%;
-
-    padding:22px 40px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:60px;
-
-    background:rgba(18, 45, 89, 0.95);
-
-    border-bottom:4px solid #FFD700;
-
-    box-shadow:0px 4px 15px rgba(0,0,0,0.35);
-
-    backdrop-filter:blur(6px);
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-}
-    nav a{
-    color:white;
-
-    text-decoration:none;
-
-    font-size:40px;
-
-    font-family:'Milkyway';
-
-    transition:0.3s;
-
-    letter-spacing:2px;
-}
-       nav a:hover{
-    color:#FFD700;
-
-    transform:translateY(-3px) scale(1.08);
-
-    text-shadow:0px 0px 12px rgba(255,215,0,0.8);
-}
-
-        /* HERO SECTION */
-
-        .hero{
-            flex:1;
-
-            display:flex;
-
-            flex-direction:column;
-
-            justify-content:center;
-
-            align-items:center;
-
-            text-align:center;
-
-            padding:40px;
-        }
-
-        /* WELCOME IMAGE */
-
-        .welcome-image{
-            width:1200px;
-
-            max-width:90%;
-
-            margin-bottom:50px;
-
-            filter:drop-shadow(4px 4px 10px rgba(0,0,0,0.4));
-        }
-
-        /* CIRCLE IMAGES */
-
-        .circle-container{
-            display:flex;
-
-            gap:40px;
-
-            margin-bottom:60px;
-
-            flex-wrap:wrap;
-
-            justify-content:center;
-        }
-
-     .circle-container img{
-    width:240px;
-
-    height:240px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:7px solid #FFD700;
-
-    box-shadow:
-    0px 0px 25px rgba(0,0,0,0.45),
-    0px 0px 15px rgba(255,215,0,0.5);
-
-    transition:0.35s;
-}
-
-      .circle-container img:hover{
-    transform:scale(1.12) rotate(2deg);
-
-    box-shadow:
-    0px 0px 35px rgba(255,215,0,0.8);
-}
-
-        /* SET SAIL BUTTON */
-
-       .set-sail-btn{
-    padding:24px 70px;
-
-    font-size:42px;
-
-    font-family:'Milkyway', cursive;
-
-    letter-spacing:2px;
-
-    color:white;
-
-    text-decoration:none;
-
-    background:linear-gradient(
-    135deg,
-    #163B72,
-    #295FA8
-    );
-
-    border:5px solid #FFD700;
-
-    border-radius:70px;
-
-    transition:0.35s;
-
-    box-shadow:
-    0px 0px 20px rgba(0,0,0,0.4),
-    0px 0px 15px rgba(255,215,0,0.5);
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-      .set-sail-btn:hover{
-    transform:scale(1.1) translateY(-4px);
-
-    background:linear-gradient(
-    135deg,
-    #204C91,
-    #3A74C4
-    );
-
-    box-shadow:
-    0px 0px 35px rgba(255,215,0,0.8);
-}
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Line Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- FIRST SCREEN: WELCOME + CHOOSE SHIP -->
+    <section id="ship-screen">
 
-    <nav>
+        <img src="images/Welcomeaboard.png" alt="Welcome Aboard" class="welcome-image">
 
-        <a href="index.html">Home</a>
+        <h2>Choose Your Ship</h2>
 
-        <a href="aboutme.html">About Me</a>
-
-        <a href="myfuture.html">Journey</a>
-
-        <a href="projects.html">Projects</a>
-
-        <a href="favorites.html">Favorites</a>
-
-        <a href="food.html">Food</a>
-
-    </nav>
-
-    <!-- HERO SECTION -->
-
-    <section class="hero">
-
-        <!-- WELCOME ABOARD IMAGE -->
-
-        <img src="images/Welcomeaboard.png" alt="Welcome Aboard"
-        class="welcome-image">
-
-        <!-- CIRCLE IMAGES -->
-
-        <div class="circle-container">
-
-            <img src="images/minisanji.jpg" alt="Sanji">
-
-            <img src="images/miniluffy.jpg" alt="Luffy">
-
-            <img src="images/minizoro.jpg" alt="Zoro">
-
+        <div class="ship-options">
+            <img src="images/ship1.jpg" onclick="chooseShip('images/ship1.jpg')" alt="Ship 1">
+            <img src="images/ship2.jpg" onclick="chooseShip('images/ship2.jpg')" alt="Ship 2">
         </div>
-
-        <!-- BUTTON -->
-
-        <a href="aboutme.html" class="set-sail-btn">
-
-            ⚓ Set Sail
-
-        </a>
 
     </section>
 
-</body>
+    <!-- SECOND SCREEN: MAP -->
+    <section id="map-screen">
 
+        <div class="map-container">
+
+            <img src="images/map.jpg" class="map" alt="Grand Line Map">
+
+            <img id="chosen-ship" class="ship" alt="Chosen Ship">
+
+            <button class="island island1" onclick="travelTo('aboutme.html', '68%', '70%')">
+                About Me
+            </button>
+
+            <button class="island island2" onclick="travelTo('favorites.html', '72%', '20%')">
+                Hobbies
+            </button>
+
+            <button class="island island3" onclick="travelTo('projects.html', '18%', '20%')">
+                Projects
+            </button>
+
+            <button class="island island4" onclick="travelTo('food.html', '53%', '45%')">
+                Food
+            </button>
+
+            <button class="island island5" onclick="travelTo('myfuture.html', '23%', '72%')">
+                Future
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
 </html>
