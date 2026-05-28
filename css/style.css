@@ -11,7 +11,10 @@
 
 body{
     font-family:'Milkyway', Arial, sans-serif;
+
     overflow:hidden;
+
+    background:#4a1985;
 }
 
 /* SHIP CHOOSE SCREEN */
